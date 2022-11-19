@@ -9,7 +9,7 @@ public class PreFinish : MonoBehaviour
 
     void Update()
     {
-        _preFinishPosition = Mathf.MoveTowards(transform.position.x, 0, 3 * Time.deltaTime);
+        _preFinishPosition = Mathf.MoveTowards(transform.position.x, 0, 5 * Time.deltaTime);
         _preFinishRotation = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, 50 * Time.deltaTime);
 
         transform.position = new Vector3(_preFinishPosition, 0, transform.position.z + 3 * Time.deltaTime);

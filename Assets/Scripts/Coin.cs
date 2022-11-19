@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Coin : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _coinsCountText;
+    [SerializeField] private GameObject _particleCoin;
+
     private float _rotationSpeed;
 
     private void Start()
@@ -25,7 +27,7 @@ public class Coin : MonoBehaviour
         FindObjectOfType<CoinManager>().CoinCount += 1;
         _coinsCountText.text = $"Coins: {FindObjectOfType<CoinManager>().CoinCount}";
         Destroy(gameObject);
-
+        Instantiate(_particleCoin, gameObject.transform.position, Quaternion.identity);
     }
 
     public string CoinsText

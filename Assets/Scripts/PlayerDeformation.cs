@@ -12,6 +12,7 @@ public class PlayerDeformation : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private PlayerBihaviour _bihaviour;
     [SerializeField] private CoinManager _coinManager;
+    [SerializeField] AudioSource _audioSource;
 
     private int _width;
     private int _height;
@@ -29,6 +30,7 @@ public class PlayerDeformation : MonoBehaviour
     {
         _width += value;
         UpdateWidth();
+        _audioSource.Play();
     }
 
     public void AddHeight(int value)
@@ -38,6 +40,7 @@ public class PlayerDeformation : MonoBehaviour
         _topSpine.position = _bottomSpine.position + new Vector3(0, _heightMultiplier * _height, 0);
 
         _collider.localScale = new Vector3(1, 0.9f + _heightMultiplier * _height, 1);
+        _audioSource.Play();
     }
 
     public void HitBarrier()

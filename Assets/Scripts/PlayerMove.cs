@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         eulerY += _directionX * 30;
-        eulerY = Mathf.Clamp(eulerY, -90, 90);
+        eulerY = Mathf.Clamp(eulerY, -45, 45);
 
         transform.eulerAngles = new Vector3(0, eulerY, 0);
     }
